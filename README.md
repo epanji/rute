@@ -58,7 +58,21 @@ Installation
 You can use this library in your android studio project by add one of
 the following `build.gradle` configuration:
 
-~~not yet implemented~~
+**Maven**
+
+```
+repositories {
+    maven {
+        url 'https://dl.bintray.com/panji/maven'
+    }
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.gmail.epanji:koneksiurl:1.0.0@aar'
+    compile 'com.gmail.epanji:rute:1.0.0@aar'
+}
+```
 
 Usage
 =====
