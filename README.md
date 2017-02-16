@@ -40,14 +40,16 @@ Features
 --------
 
 * RouteAdapter
-    * able to use your own icon
+    * able to use your own icon in fourth params.
 * RouteView
-    * setOrigin()
-    * setDestination()
-    * setAdapter()
+    * setOrigin() - set MarkerOption to add your customisation.
+    * setDestination() - set MarkerOption to add your customisation.
+    * setAdapter() - set RouteAdapter to this View.
 * RouteBuilder
-    * addColor()
-    * setWaypoints()
+    * addColor() - color more than one means alternatives = true.
+    * resetColor() - emptying list of color to be add once again.
+    * setColors() - set list of color to this builder.
+    * setWaypoints() - waypoints is list of string represent coordinate.
 
 ~~not finished yet~~
 
@@ -62,12 +64,33 @@ the following `build.gradle` configuration:
 Usage
 =====
 
-~~not finished yet~~
+Always remember to use RouteBuilder() inside `AsyncTask'.
+Here is [sample](./samples) you can follow and modify as you need.
 
 Sample + Screenshots
 ====================
 
-<br><br>
+**activity_main**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.gmail.epanji.library.MainActivity">
+
+    <fragment android:id="@+id/rvMain1"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:name="com.gmail.epanji.rute.RouteView" />
+
+</RelativeLayout>
+```
 
 **MainActivity**
 
@@ -116,9 +139,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 }
 ```
 
-
-<br><br>
-
 **AsyncTask**
 
 ---
@@ -140,7 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 ![resize](./samples/screenshots/sample_1.jpg)
 
-<br><br>
+---
 
 ```java
     private class Sample extends AsyncTask<Void, Void, List<Route>> {
@@ -161,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
 ![resize](./samples/screenshots/sample_2.jpg)
 
-<br><br>
+---
 
 ```java
     private class Sample extends AsyncTask<Void, Void, List<Route>> {
