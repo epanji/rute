@@ -35,7 +35,7 @@ import java.util.List;
 @SuppressWarnings({"WeakerAccess", "unused"})
 public class RouteBuilder extends GoogleDirection {
     /**
-     * String colors for routes in map
+     * String colors for routes in map.
      */
     private List<Integer> mColors;
 
@@ -134,14 +134,14 @@ public class RouteBuilder extends GoogleDirection {
      * @param colors list of color for routes
      */
     public void setColors(List<Integer> colors) {
-        mColors = colors;
+        this.mColors = colors;
     }
 
     /**
      * Clear current list color to be add later.
      */
     public void resetColors() {
-        mColors.clear();
+        this.mColors.clear();
     }
 
     /**
@@ -150,6 +150,15 @@ public class RouteBuilder extends GoogleDirection {
      * @param color Integer color for route
      */
     public void addColor(int color) {
-        mColors.add(color);
+        this.mColors.add(color);
+    }
+
+    /**
+     * Set language to be used.
+     *
+     * @param language String represent language
+     */
+    public void setLanguage(String language) {
+        this.mLanguage = language;
     }
 }

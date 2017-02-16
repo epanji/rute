@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Rute</string>
-    <string name="route_title">Rute Ke %d</string>
+    <string name="route_title">Rute %d</string>
 </resources>
