@@ -50,8 +50,7 @@ Features
     * resetColor() - emptying list of color to be add once again.
     * setColors() - set list of color to this builder.
     * setWaypoints() - waypoints is list of string represent coordinate.
-
-~~not finished yet~~
+    * setLanguage() - set language for html_instructions.
 
 Installation
 ------------
@@ -64,7 +63,8 @@ the following `build.gradle` configuration:
 Usage
 =====
 
-Always remember to use RouteBuilder() inside `AsyncTask'.
+Always remember to use RouteBuilder() inside `AsyncTask`, or
+at least when you invoke build().
 Here is [sample](./samples) you can follow and modify as you need.
 
 Sample + Screenshots
