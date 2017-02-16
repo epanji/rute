@@ -1,5 +1,26 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'rute'
+
+    publishedGroupId = 'com.gmail.epanji'
+    libraryName = 'rute'
+    artifact = 'rute'
+
+    libraryDescription = 'Simple library to use Android Google Maps V2.'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'panji'
+    developerName = 'Panji Kusuma'
+    developerEmail = 'epanji@gmail.com'
+
+    licenseName = 'Apache License Version 2.0'
+    licenseUrl = 'http://www.opensource.org/licenses/apache2.0.php'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -25,3 +46,6 @@ dependencies {
     compile 'com.google.android.gms:play-services:10.0.1'
     compile 'com.gmail.epanji:koneksiurl:1.0.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/attwellBrian/JCenter/master/bintrayv1.gradle'
