@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 mRouteView.setAdapter(
                         new RouteAdapter(MainActivity.this, map, lr
-                        // fourth params if needed
+                        // fourth params if needed.
                         ));
             }
         } catch (InterruptedException | ExecutionException ignored) {}
@@ -193,8 +193,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             RouteBuilder rb = new RouteBuilder(origin, destination);
             rb.addColor(0xFF63B3EA);
-			
-			// color more than one means alternatives = true
+
+            // color more than one means alternatives = true.
             rb.addColor(Color.GREEN);
             rb.addColor(Color.parseColor("#85FFF7"));
 
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             rb.addColor(Color.GREEN);
             rb.addColor(Color.parseColor("#85FFF7"));
 
-//            add waypoints sometimes make results less than colors you add.
+            // add waypoints sometimes make results less than colors you add.
             String[] waypoints = {"-7.796239,110.401054", "-7.7963694,110.39262"};
             rb.setWaypoints(Arrays.asList(waypoints));
 
