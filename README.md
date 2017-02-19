@@ -58,6 +58,14 @@ Installation
 You can use this library in your android studio project by add one of
 the following `build.gradle` configuration:
 
+**Jcenter**
+
+```
+dependencies {
+    compile 'com.gmail.epanji:rute:1.0.0'
+}
+```
+
 **Maven**
 
 ```
