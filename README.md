@@ -62,6 +62,8 @@ the following `build.gradle` configuration:
 
 ```
 dependencies {
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.gmail.epanji:koneksiurl:1.0.0'
     compile 'com.gmail.epanji:rute:1.0.0'
 }
 ```
@@ -92,7 +94,7 @@ Here is [sample](./samples) you can follow and modify as you need.
 Sample + Screenshots
 ====================
 
-**activity_main**
+**activity_main.xml**
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -100,11 +102,7 @@ Sample + Screenshots
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.gmail.epanji.library.MainActivity">
+    tools:context=".MainActivity">
 
     <fragment android:id="@+id/rvMain1"
         android:layout_height="match_parent"
@@ -114,7 +112,7 @@ Sample + Screenshots
 </RelativeLayout>
 ```
 
-**MainActivity**
+**MainActivity.java**
 
 ```java
 public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -151,7 +149,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         .title("This is destination"));
 
                 mRouteView.setAdapter(
-                        new RouteAdapter(MainActivity.this, map, lr, R.mipmap.ic_launcher));
+                        new RouteAdapter(MainActivity.this, map, lr
+                        // fourth params if needed
+                        ));
             }
         } catch (InterruptedException | ExecutionException ignored) {}
     }
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 ```
 
-![resize](./samples/screenshots/sample_1.jpg)
+![picture](./samples/screenshots/sample_1.jpg)
 
 ---
 
@@ -193,6 +193,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             RouteBuilder rb = new RouteBuilder(origin, destination);
             rb.addColor(0xFF63B3EA);
+			
+			// color more than one means alternatives = true
             rb.addColor(Color.GREEN);
             rb.addColor(Color.parseColor("#85FFF7"));
 
@@ -201,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 ```
 
-![resize](./samples/screenshots/sample_2.jpg)
+![picture](./samples/screenshots/sample_2.jpg)
 
 ---
 
@@ -226,7 +228,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 ```
 
-![resize](./samples/screenshots/sample_3.jpg)
+![picture](./samples/screenshots/sample_3.jpg)
 
 License
 =======
