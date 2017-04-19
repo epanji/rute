@@ -84,6 +84,25 @@ dependencies {
 }
 ```
 
+Notes
+-----
+
+If you updated android studio to version >= 2.3.1 you will need to add
+addition config inside `build.gradle` or it will be unable to run the
+app due to gradle compatibility on appcompat. Addition is the line
+with `//` inside this sample:
+
+```
+dependencies {
+    ...
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    //noinspection UseOfBundledGooglePlayServices
+    compile 'com.google.android.gms:play-services:10.2.1'
+    ...
+}
+```
+
 Usage
 =====
 
